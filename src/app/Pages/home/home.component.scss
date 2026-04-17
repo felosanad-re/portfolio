@@ -1,0 +1,44 @@
+.name {
+  color: #a53dff;
+  font-weight: bold;
+}
+
+.download-cv {
+  background-color: #a53dff;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.download-cv:hover {
+  background-color: #aa5dee;
+}
+
+.gradient-bg {
+  position: relative;
+  min-height: 100vh;
+  background-color: #ffffff;
+  overflow: hidden;
+  background-image:
+    radial-gradient(
+      circle at 76% 10%,
+      rgba(165, 61, 255, 0.18) 0,
+      rgba(165, 61, 255, 0.14) 16%,
+      rgba(165, 61, 255, 0.08) 30%,
+      rgba(165, 61, 255, 0) 50%
+    ),
+    radial-gradient(
+      circle at 88% 56%,
+      rgba(156, 245, 214, 0.26) 0,
+      rgba(156, 245, 214, 0.18) 20%,
+      rgba(156, 245, 214, 0.1) 34%,
+      rgba(156, 245, 214, 0) 54%
+    ),
+    radial-gradient(
+      circle at 18% 84%,
+      rgba(255, 240, 180, 0.34) 0,
+      rgba(255, 240, 180, 0.24) 14%,
+      rgba(255, 240, 180, 0.12) 28%,
+      rgba(255, 240, 180, 0) 46%
+    );
+  background-repeat: no-repeat;
+}

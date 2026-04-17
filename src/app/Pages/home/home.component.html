@@ -1,0 +1,43 @@
+<div class="gradient-bg">
+  <div class="container my-auto" id="home">
+    <div class="row align-items-center min-vh-100">
+      <!-- left side personal details 8-cols -->
+      <div class="col-12 col-md-8">
+        <h1 class="mb-3">
+          Hello, I’m <br />
+          <span class="name">Felopatter Sanad</span>
+        </h1>
+        <p class="text-black-50">
+          I'm a
+          <span class="fw-bold" [ngStyle]="{ color: '#a53dff' }"
+            >Junior Full Stack Developer</span
+          >
+          who enjoys turning ideas into real, working web applications. I focus
+          on writing clean code, building smooth user experiences, and
+          connecting frontend with powerful backend logic. Always learning,
+          improving, and aiming to grow into a professional developer.
+        </p>
+
+        <button
+          class="btn mt-4 text-white fw-bold download-cv"
+          (click)="downloadCV()"
+        >
+          Download My CV
+        </button>
+      </div>
+
+      <!-- Right side Picture 4-cols -->
+      <div
+        class="col-12 col-md-4 d-flex justify-content-center align-items-center"
+      >
+        <figure class="m-0">
+          <img
+            src="../../../assets/Images/pic.jpeg"
+            class="w-75 rounded-circle"
+            alt="personal Picture"
+          />
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>

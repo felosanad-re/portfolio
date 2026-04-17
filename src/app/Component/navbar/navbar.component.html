@@ -1,0 +1,38 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" #navbarCollapse>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Portfolio</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul
+          class="navbar-nav position-relative z-0 ms-auto my-3 my-md-0"
+          #navbarNav
+        >
+          @for (item of items; track $index) {
+            <li class="nav-item flex justify-content-center align-items-center">
+              <a
+                class="nav-link"
+                [class.active]="$index === activeIndex"
+                (click)="goToSection(item.sectionId, $index, $event)"
+                href="#{{ item.sectionId }}"
+                >{{ item.label }}</a
+              >
+            </li>
+          }
+          <!-- moving Indicator -->
+          <div class="nav-indicator" #indicator></div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
