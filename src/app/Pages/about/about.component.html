@@ -15,24 +15,28 @@
         <div class="col-12 col-md-8">
           <h2 class="mb-4">About Me</h2>
           <p class="lead mb-3">
-            Hello! I'm a passionate developer with experience in building modern
-            web applications.
+            Hello! I'm a Junior Full Stack Developer passionate about building
+            modern web applications.
           </p>
           <p>
-            I specialize in creating user-friendly interfaces and efficient
-            backend solutions. With a strong foundation in software development
-            principles, I strive to deliver high-quality code and exceptional
-            user experiences.
+            I have hands-on experience developing full stack projects using
+            Angular and .NET, focusing on creating user-friendly interfaces and
+            efficient backend systems.
+          </p>
+          <p>
+            I enjoy turning ideas into real applications and continuously
+            improving my skills through practice and real-world projects.
           </p>
           <div class="row mt-4">
             <div class="col-6 col-lg-3 mb-2">
-              <strong>Experience:</strong> one year at full stack
+              <strong>Experience:</strong> Practical experience through personal
+              projects
             </div>
             <div class="col-6 col-lg-3 mb-2">
-              <strong>Projects:</strong> 2 Completed
+              <strong>Projects:</strong> 2 Full Stack Projects
             </div>
             <div class="col-6 col-lg-3 mb-2">
-              <strong>Education:</strong> CS Degree
+              <strong>Education:</strong> Computer Science
             </div>
             <div class="col-6 col-lg-3 mb-2">
               <strong>Location:</strong> Egypt
@@ -50,58 +54,22 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="skill-category">
             <h4 class="text-primary mb-4">Frontend Development</h4>
-            <div class="skill-item mb-3">
-              <div class="d-flex justify-content-between mb-1">
-                <span>HTML5</span>
-                <span>95%</span>
+            <!-- loop -->
+            @for (skill of frontEndSkills; track $index) {
+              <div class="skill-item mb-3">
+                <div class="d-flex justify-content-between mb-1">
+                  <span>{{ skill.name }}</span>
+                  <span>{{ skill.percentage }}%</span>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar progress-bar-striped progress-bar-animated"
+                    role="progressbar"
+                    [style.width.%]="skill.percentage"
+                  ></div>
+                </div>
               </div>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 95%"
-                ></div>
-              </div>
-            </div>
-            <div class="skill-item mb-3">
-              <div class="d-flex justify-content-between mb-1">
-                <span>CSS3</span>
-                <span>90%</span>
-              </div>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 90%"
-                ></div>
-              </div>
-            </div>
-            <div class="skill-item mb-3">
-              <div class="d-flex justify-content-between mb-1">
-                <span>JavaScript</span>
-                <span>85%</span>
-              </div>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 85%"
-                ></div>
-              </div>
-            </div>
-            <div class="skill-item mb-3">
-              <div class="d-flex justify-content-between mb-1">
-                <span>Angular</span>
-                <span>80%</span>
-              </div>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 80%"
-                ></div>
-              </div>
-            </div>
+            }
           </div>
         </div>
 
@@ -109,58 +77,21 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="skill-category">
             <h4 class="text-success mb-4">Backend Development</h4>
-            <div class="skill-item mb-3">
-              <div class="d-flex justify-content-between mb-1">
-                <span>.Net Framework</span>
-                <span>70%</span>
+            @for (skill of backEndSkills; track $index) {
+              <div class="skill-item mb-3">
+                <div class="d-flex justify-content-between mb-1">
+                  <span>{{ skill.name }}</span>
+                  <span>{{ skill.percentage }}%</span>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                    role="progressbar"
+                    [style.width.%]="skill.percentage"
+                  ></div>
+                </div>
               </div>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 85%"
-                ></div>
-              </div>
-            </div>
-            <div class="skill-item mb-3">
-              <div class="d-flex justify-content-between mb-1">
-                <span>C#</span>
-                <span>80%</span>
-              </div>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 80%"
-                ></div>
-              </div>
-            </div>
-            <div class="skill-item mb-3">
-              <div class="d-flex justify-content-between mb-1">
-                <span>SQL Database</span>
-                <span>75%</span>
-              </div>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 75%"
-                ></div>
-              </div>
-            </div>
-            <div class="skill-item mb-3">
-              <div class="d-flex justify-content-between mb-1">
-                <span>Entity Framework</span>
-                <span>75%</span>
-              </div>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 75%"
-                ></div>
-              </div>
-            </div>
+            }
           </div>
         </div>
 
@@ -168,45 +99,21 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="skill-category">
             <h4 class="text-info mb-4">Tools & Others</h4>
-            <div class="skill-item mb-3">
-              <div class="d-flex justify-content-between mb-1">
-                <span>Git & GitHub</span>
-                <span>90%</span>
+            @for (skill of toolsSkills; track $index) {
+              <div class="skill-item mb-3">
+                <div class="d-flex justify-content-between mb-1">
+                  <span>{{ skill.name }}b</span>
+                  <span>{{ skill.percentage }}%</span>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+                    role="progressbar"
+                    [style.width.%]="skill.percentage"
+                  ></div>
+                </div>
               </div>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 90%"
-                ></div>
-              </div>
-            </div>
-            <div class="skill-item mb-3">
-              <div class="d-flex justify-content-between mb-1">
-                <span>Postman</span>
-                <span>85%</span>
-              </div>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 70%"
-                ></div>
-              </div>
-            </div>
-            <div class="skill-item mb-3">
-              <div class="d-flex justify-content-between mb-1">
-                <span>REST APIs</span>
-                <span>80%</span>
-              </div>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 65%"
-                ></div>
-              </div>
-            </div>
+            }
           </div>
         </div>
       </div>
