@@ -1,8 +1,8 @@
 <div class="about">
   <div class="container" id="about">
     <!-- About Me Section -->
-    <section class="about-me py-5">
-      <div class="row align-items-center">
+    <section class="about-me">
+      <div class="row align-items-center min-vh-100">
         <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
           <div class="about-image">
             <img
@@ -27,6 +27,14 @@
             I enjoy turning ideas into real applications and continuously
             improving my skills through practice and real-world projects.
           </p>
+          <p class="mt-3">
+            <strong>Tech Stack:</strong> Angular, .NET, SQL Server, REST APIs
+          </p>
+          <ul class="mt-3">
+            <li>Built full stack applications from scratch</li>
+            <li>Strong understanding of REST APIs</li>
+            <li>Focused on clean code and performance</li>
+          </ul>
           <div class="row mt-4">
             <div class="col-6 col-lg-3 mb-2">
               <strong>Experience:</strong> Practical experience through personal
@@ -42,78 +50,16 @@
               <strong>Location:</strong> Egypt
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills py-5">
-      <h2 class="text-center mb-5">My Skills</h2>
-      <div class="row g-4">
-        <!-- Frontend Skills -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="skill-category">
-            <h4 class="text-primary mb-4">Frontend Development</h4>
-            <!-- loop -->
-            @for (skill of frontEndSkills; track $index) {
-              <div class="skill-item mb-3">
-                <div class="d-flex justify-content-between mb-1">
-                  <span>{{ skill.name }}</span>
-                  <span>{{ skill.percentage }}%</span>
-                </div>
-                <div class="progress">
-                  <div
-                    class="progress-bar progress-bar-striped progress-bar-animated"
-                    role="progressbar"
-                    [style.width.%]="skill.percentage"
-                  ></div>
-                </div>
-              </div>
-            }
-          </div>
-        </div>
-
-        <!-- Backend Skills -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="skill-category">
-            <h4 class="text-success mb-4">Backend Development</h4>
-            @for (skill of backEndSkills; track $index) {
-              <div class="skill-item mb-3">
-                <div class="d-flex justify-content-between mb-1">
-                  <span>{{ skill.name }}</span>
-                  <span>{{ skill.percentage }}%</span>
-                </div>
-                <div class="progress">
-                  <div
-                    class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                    role="progressbar"
-                    [style.width.%]="skill.percentage"
-                  ></div>
-                </div>
-              </div>
-            }
-          </div>
-        </div>
-
-        <!-- Tools & Other -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="skill-category">
-            <h4 class="text-info mb-4">Tools & Others</h4>
-            @for (skill of toolsSkills; track $index) {
-              <div class="skill-item mb-3">
-                <div class="d-flex justify-content-between mb-1">
-                  <span>{{ skill.name }}b</span>
-                  <span>{{ skill.percentage }}%</span>
-                </div>
-                <div class="progress">
-                  <div
-                    class="progress-bar progress-bar-striped progress-bar-animated bg-info"
-                    role="progressbar"
-                    [style.width.%]="skill.percentage"
-                  ></div>
-                </div>
-              </div>
-            }
+          <div class="mt-4">
+            <a href="#" class="btn mt-4 text-white fw-bold btn-primary me-2"
+              >View My Work</a
+            >
+            <button
+              class="btn mt-4 text-white fw-bold download-cv"
+              (click)="downloadCV()"
+            >
+              Download My CV
+            </button>
           </div>
         </div>
       </div>

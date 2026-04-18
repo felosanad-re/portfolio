@@ -1,0 +1,36 @@
+.skills {
+  padding: 60px 0;
+  background-color: #fff;
+
+  h2 {
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  .skill-category {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+    h4 {
+      font-weight: 600;
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eee;
+    }
+  }
+
+  .skill-item {
+    .progress {
+      height: 15px;
+      border-radius: 5px;
+      background-color: #e9ecef;
+
+      .progress-bar {
+        border-radius: 5px;
+        transition: width 0.5s ease-in-out;
+      }
+    }
+  }
+}

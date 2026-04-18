@@ -1,1 +1,75 @@
-<p>skills works!</p>
+<!-- Skills Section -->
+<section class="skills py-5" id="skills">
+  <div class="container my-5">
+    <h2 class="text-center mb-5">My Skills</h2>
+    <div class="row g-4 min-vh-100">
+      <!-- Frontend Skills -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="skill-category">
+          <h4 class="text-primary mb-4">Frontend Development</h4>
+          <!-- loop -->
+          @for (skill of frontEndSkills; track $index) {
+            <div class="skill-item mb-2">
+              <div class="d-flex justify-content-between mb-1">
+                <span>{{ skill.name }} <i [class]="skill.icon"></i></span>
+
+                <span>{{ skill.percentage }}%</span>
+              </div>
+              <div class="progress">
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  role="progressbar"
+                  [style.width.%]="skill.percentage"
+                ></div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Backend Skills -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="skill-category">
+          <h4 class="text-success mb-4">Backend Development</h4>
+          @for (skill of backEndSkills; track $index) {
+            <div class="skill-item mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span>{{ skill.name }}</span>
+                <span>{{ skill.percentage }}%</span>
+              </div>
+              <div class="progress">
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                  role="progressbar"
+                  [style.width.%]="skill.percentage"
+                ></div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Tools & Other -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="skill-category">
+          <h4 class="text-info mb-4">Tools & Others</h4>
+          @for (skill of toolsSkills; track $index) {
+            <div class="skill-item mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span>{{ skill.name }}b</span>
+                <span>{{ skill.percentage }}%</span>
+              </div>
+              <div class="progress">
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+                  role="progressbar"
+                  [style.width.%]="skill.percentage"
+                ></div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
