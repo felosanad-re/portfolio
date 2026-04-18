@@ -1,14 +1,28 @@
-import { NgStyle } from '@angular/common';
-import { Component } from '@angular/core';
+import { NgStyle, NgIf } from '@angular/common';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgStyle],
+  imports: [NgStyle, NgIf],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+  showScrollButton = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.showScrollButton = window.pageYOffset > 300;
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
   ngAfterViewInit() {
     const section = document.getElementById('home');
     if (section) {

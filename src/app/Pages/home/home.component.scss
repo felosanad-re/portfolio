@@ -42,3 +42,44 @@
     );
   background-repeat: no-repeat;
 }
+
+// Scroll to top button
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a53dff 0%, #7c28c4 100%);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(165, 61, 255, 0.4);
+  transition: all 0.3s ease;
+  z-index: 100;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(165, 61, 255, 0.6);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+  }
+}

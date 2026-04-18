@@ -9,13 +9,19 @@
         </h1>
         <p class="text-black-50">
           I'm a
-          <span class="fw-bold" [ngStyle]="{ color: '#a53dff' }"
-            >Junior Full Stack Developer</span
-          >
-          who enjoys turning ideas into real, working web applications. I focus
-          on writing clean code, building smooth user experiences, and
-          connecting frontend with powerful backend logic. Always learning,
-          improving, and aiming to grow into a professional developer.
+          <span class="fw-bold" [ngStyle]="{ color: '#a53dff' }">
+            Junior Full Stack Developer
+          </span>
+          who enjoys turning ideas into real, working web applications.
+        </p>
+
+        <p class="text-black-50">
+          Working with Angular, .NET, and SQL Server to build responsive and
+          scalable applications.
+        </p>
+
+        <p class="text-black-50">
+          Feel free to explore my projects or get in touch with me.
         </p>
 
         <button
@@ -23,6 +29,15 @@
           (click)="downloadCV()"
         >
           Download My CV
+        </button>
+
+        <!-- Scroll to top button -->
+        <button
+          class="scroll-to-top"
+          (click)="scrollToTop()"
+          *ngIf="showScrollButton"
+        >
+          <i class="fa-solid fa-arrow-up"></i>
         </button>
       </div>
 

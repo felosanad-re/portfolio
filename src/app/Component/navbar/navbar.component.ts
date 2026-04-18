@@ -9,8 +9,10 @@ import { NavbarItems } from '../../Core/navbar-items';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-  activeIndex: number = 0; // Default active index link
+  activeIndex: number = 0;
+  isScrolled: boolean = false;
   items!: NavbarItems[];
+
   ngOnInit() {
     this.items = [
       {
@@ -31,6 +33,7 @@ export class NavbarComponent {
       },
     ];
   }
+
   @ViewChild('navbarNav') navbarNav!: ElementRef<HTMLElement>;
   @ViewChild('indicator') indicator!: ElementRef<HTMLElement>;
   @ViewChild('navbarCollapse') navbarCollapse!: ElementRef<HTMLElement>;
@@ -39,16 +42,15 @@ export class NavbarComponent {
     const collapseEl = this.navbarCollapse.nativeElement;
 
     collapseEl.addEventListener('shown.bs.collapse', () => {
-      this.updateIndicatorPosition(); // Update indicator position in collapse
+      this.updateIndicatorPosition();
     });
 
-    setTimeout(() => this.updateIndicatorPosition(), 100); // Update indicator position on page
+    setTimeout(() => this.updateIndicatorPosition(), 100);
   }
 
   goToSection(sectionId: string, index: number, event: Event) {
     this.activeIndex = index;
 
-    // Scroll
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({
@@ -57,23 +59,21 @@ export class NavbarComponent {
       });
     }
 
-    // Move indicator
     setTimeout(() => this.updateIndicatorPosition(), 50);
   }
 
   private updateIndicatorPosition(): void {
     if (!this.indicator || !this.navbarNav) return;
 
-    const container = this.navbarNav.nativeElement; // Ul
-    const links = container.querySelectorAll('.nav-link'); // li
-    const activeLink = links[this.activeIndex] as HTMLElement; // active a
+    const container = this.navbarNav.nativeElement;
+    const links = container.querySelectorAll('.nav-link');
+    const activeLink = links[this.activeIndex] as HTMLElement;
 
     if (!activeLink) return;
 
-    const linkRect = activeLink.getBoundingClientRect(); // get distance
+    const linkRect = activeLink.getBoundingClientRect();
     const containerRect = container.getBoundingClientRect();
 
-    // Calculate indicator position
     const top = linkRect.top - containerRect.top;
     const height = linkRect.height;
     const left = linkRect.left - containerRect.left;
@@ -81,10 +81,74 @@ export class NavbarComponent {
 
     const indicatorEl = this.indicator.nativeElement;
 
-    indicatorEl.style.top = `${top}px`; // for vertical
+    indicatorEl.style.top = `${top}px`;
     indicatorEl.style.height = `${height}px`;
-    indicatorEl.style.left = `${left}px`; // For horizontal
+    indicatorEl.style.left = `${left}px`;
     indicatorEl.style.width = `${width}px`;
+  }
+
+  private currentSection = '';
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    this.isScrolled = scrollTop > 100;
+
+    // Update active section based on scroll position
+    this.updateActiveSection();
+
+    const container = this.navbarNav.nativeElement;
+    if (container) {
+      const links = container.querySelectorAll('.nav-link');
+      const activeLink = links[this.activeIndex] as HTMLElement;
+
+      if (activeLink) {
+        setTimeout(() => this.updateIndicatorPosition(), 50);
+      }
+    }
+  }
+
+  private updateActiveSection() {
+    const sections = ['home', 'about', 'skills', 'works'];
+    const sectionHeights: Record<string, { top: number, bottom: number }> = {};
+
+    // Get position of each section
+    sections.forEach(section => {
+      const element = document.getElementById(section);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        sectionHeights[section] = {
+          top: rect.top + window.scrollY,
+          bottom: rect.top + window.scrollY + rect.height
+        };
+      }
+    });
+
+    // Determine which section is currently active based on scroll position
+    const currentScroll = window.scrollY;
+    let newSection = 'home'; // default to home
+
+    // Check each section to see if current scroll is within its bounds
+    for (const [section, positions] of Object.entries(sectionHeights)) {
+      if (currentScroll >= positions.top - 100 && currentScroll < positions.bottom - 100) {
+        newSection = section;
+        break;
+      }
+    }
+
+    // Only update if section has changed
+    if (newSection !== this.currentSection) {
+      this.currentSection = newSection;
+
+      // Update activeIndex based on section
+      const sectionIndex = sections.indexOf(newSection);
+      if (sectionIndex !== -1) {
+        this.activeIndex = sectionIndex;
+      }
+
+      // Trigger indicator update
+      this.updateIndicatorPosition();
+    }
   }
 
   @HostListener('window:resize')
