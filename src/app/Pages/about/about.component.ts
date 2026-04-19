@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { WhatIDoComponent } from '../what-i-do/what-i-do.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
+  imports: [WhatIDoComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
 })

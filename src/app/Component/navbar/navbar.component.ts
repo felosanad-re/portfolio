@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { NavbarItems } from '../../Core/navbar-items';
+import { NavbarItems } from '../../Core/InterFaces/navbar-items';
 
 @Component({
   selector: 'app-navbar',
@@ -110,17 +110,18 @@ export class NavbarComponent {
     // Use debounce to prevent rapid updates during smooth scrolling
     this.scrollTimeout = setTimeout(() => {
       const sections = ['home', 'about', 'skills', 'works'];
-      const sectionHeights: Record<string, { top: number, bottom: number }> = {};
+      const sectionHeights: Record<string, { top: number; bottom: number }> =
+        {};
 
       // Get position of each section
-      sections.forEach(section => {
+      sections.forEach((section) => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
           // Only apply offset once in the comparison, not in the position calculation
           sectionHeights[section] = {
             top: rect.top + window.scrollY,
-            bottom: rect.top + window.scrollY + rect.height
+            bottom: rect.top + window.scrollY + rect.height,
           };
         }
       });
@@ -132,7 +133,10 @@ export class NavbarComponent {
       // Check each section to see if current scroll is within its bounds
       for (const [section, positions] of Object.entries(sectionHeights)) {
         // Only apply the offset once here, and add a small buffer to prevent rapid toggling
-        if (currentScroll >= positions.top - 80 && currentScroll < positions.bottom - 120) {
+        if (
+          currentScroll >= positions.top - 80 &&
+          currentScroll < positions.bottom - 120
+        ) {
           newSection = section;
           break;
         }

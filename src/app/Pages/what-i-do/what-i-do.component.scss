@@ -1,0 +1,44 @@
+.what-i-do-card {
+  padding: 30px 20px;
+  border-radius: 18px;
+  text-align: center;
+  color: #fff;
+
+  background: linear-gradient(135deg, #e9d5ff, #a53dff, #7c3aed);
+
+  box-shadow: 0 10px 25px rgba(165, 61, 255, 0.25);
+
+  transition: all 0.4s ease;
+
+  // 🔽 Scroll animation initial
+  opacity: 0;
+  transform: translateY(50px);
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  i {
+    font-size: 28px;
+    margin-bottom: 15px;
+    display: inline-block;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ecfdf5;
+  }
+
+  &:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+}

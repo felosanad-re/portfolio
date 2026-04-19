@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Skills } from '../../Core/skills';
+import { Skills } from '../../Core/InterFaces/skills';
 
 @Component({
   selector: 'app-skills',
@@ -28,7 +28,7 @@ export class SkillsComponent {
 
     this.backEndSkills = [
       { name: 'C#', percentage: 85 },
-      { name: 'ٌRedis', percentage: 85 },
+      { name: 'Redis', percentage: 85 },
       { name: 'LINQ', percentage: 85 },
       { name: 'SQL Server', percentage: 85 },
       { name: 'ASP.NET Core', percentage: 80 },
