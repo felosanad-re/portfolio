@@ -92,7 +92,7 @@ export class NavbarComponent {
   @HostListener('window:scroll')
   onWindowScroll() {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    this.isScrolled = scrollTop > 100;
+    this.isScrolled = scrollTop > 80;
 
     // Update active section based on scroll position
     this.updateActiveSection();

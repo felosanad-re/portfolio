@@ -1,0 +1,57 @@
+.portfolio {
+  background-color: #ddd;
+
+  .project-card {
+    border: 2px solid transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+    // initial state (hidden)
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+
+    &.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: #a53dff;
+      box-shadow: 0 10px 25px rgba(165, 61, 255, 0.25);
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    img {
+      transition: transform 0.4s ease;
+    }
+
+    .card-body {
+      h5 {
+        font-weight: 600;
+      }
+
+      p {
+        color: #6c757d;
+        font-size: 14px;
+      }
+
+      .btn-primary {
+        background-color: #a53dff;
+        border: none;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: #aa5dee;
+        }
+      }
+    }
+  }
+}

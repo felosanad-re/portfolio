@@ -1,10 +1,16 @@
 <!-- Skills Section -->
-<section class="skills py-5" id="skills">
-  <div class="container my-5">
-    <h2 class="text-center mb-5">My Skills</h2>
+<section
+  #skillsSection
+  class="skills py-5"
+  id="skills"
+  [class.section-visible]="sectionVisible"
+  [class.content-visible]="contentVisible"
+>
+  <div class="container">
+    <h2 class="text-center mb-5 section-heading">My Skills</h2>
     <div class="row g-4 min-vh-100">
       <!-- Frontend Skills -->
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4 skill-column">
         <div class="skill-category">
           <h4 class="text-primary mb-4">Frontend Development</h4>
           <!-- loop -->
@@ -19,7 +25,7 @@
                 <div
                   class="progress-bar progress-bar-striped progress-bar-animated"
                   role="progressbar"
-                  [style.width.%]="skill.percentage"
+                  [style.width.%]="contentVisible ? skill.percentage : 0"
                 ></div>
               </div>
             </div>
@@ -28,7 +34,7 @@
       </div>
 
       <!-- Backend Skills -->
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4 skill-column">
         <div class="skill-category">
           <h4 class="text-success mb-4">Backend Development</h4>
           @for (skill of backEndSkills; track $index) {
@@ -41,7 +47,7 @@
                 <div
                   class="progress-bar progress-bar-striped progress-bar-animated bg-success"
                   role="progressbar"
-                  [style.width.%]="skill.percentage"
+                  [style.width.%]="contentVisible ? skill.percentage : 0"
                 ></div>
               </div>
             </div>
@@ -50,7 +56,7 @@
       </div>
 
       <!-- Tools & Other -->
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4 skill-column">
         <div class="skill-category">
           <h4 class="text-info mb-4">Tools & Others</h4>
           @for (skill of toolsSkills; track $index) {
@@ -63,7 +69,7 @@
                 <div
                   class="progress-bar progress-bar-striped progress-bar-animated bg-info"
                   role="progressbar"
-                  [style.width.%]="skill.percentage"
+                  [style.width.%]="contentVisible ? skill.percentage : 0"
                 ></div>
               </div>
             </div>
