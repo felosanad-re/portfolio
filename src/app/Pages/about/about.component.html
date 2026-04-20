@@ -51,9 +51,12 @@
             </div>
           </div>
           <div class="mt-4">
-            <a href="#" class="btn mt-4 text-white fw-bold btn-primary me-2"
-              >View My Work</a
+            <button
+              class="btn mt-4 text-white fw-bold btn-primary me-2"
+              (click)="scrollToWorks()"
             >
+              View My Work
+            </button>
             <button
               class="btn mt-4 text-white fw-bold download-cv"
               (click)="downloadCV()"

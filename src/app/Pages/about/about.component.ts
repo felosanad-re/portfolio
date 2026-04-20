@@ -24,4 +24,11 @@ export class AboutComponent {
     link.click();
     document.body.removeChild(link);
   }
+
+  scrollToWorks() {
+    const element = document.getElementById('works');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
