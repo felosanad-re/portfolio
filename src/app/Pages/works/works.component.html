@@ -1,20 +1,17 @@
 <section class="portfolio py-5" id="works">
   <div class="container">
-    <h2 class="text-center mb-5">My Works</h2>
+    <h2 class="text-center mb-5 text-capitalize">my portfolio</h2>
     <div class="row min-vh-100 g-4">
       @for (project of projects; track $index) {
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="card project-card mb-2" #card>
-            <img [src]="project.image" class="card-img-top" alt="..." />
+          <div class="card project-card d-flex flex-column" #card>
+            <img [src]="project.image" class="card-img-top w-100" alt="..." />
             <div class="card-body">
               <h5 class="card-title">{{ project.name }}</h5>
               <p class="card-text">
                 {{ project.description }}
               </p>
-              <a
-                href="#"
-                class="btn btn-primary"
-                (click)="projectDetails(project.id)"
+              <a class="btn btn-primary" (click)="projectDetails(project.id)"
                 >View details</a
               >
             </div>

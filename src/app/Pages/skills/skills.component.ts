@@ -68,9 +68,10 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
+    // check if IntersectionObserver is not supported
     if (typeof IntersectionObserver === 'undefined') {
-      this.sectionVisible = true;
-      this.contentVisible = true;
+      this.sectionVisible = true; // show the section
+      this.contentVisible = true; // show the content
       return;
     }
 

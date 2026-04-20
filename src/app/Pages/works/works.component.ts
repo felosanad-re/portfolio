@@ -21,14 +21,14 @@ export class WorksComponent {
         name: 'Ecommerce',
         description:
           'Ecommerce Platform built with performance optimization in mind using Redis for cart caching and Stripe for secure payments.',
-        image: './assets/Images/ecommerce.png',
+        image: '../../../assets/Images/Ecommerce/home.png',
       },
       {
         id: 2,
         name: 'Admin Panel',
         description:
           'Multi-role Admin Panel with full control over inventory, orders, and reporting system with secure authentication.',
-        image: './assets/Images/ecommerce.png',
+        image: './assets/Images/Admin Panel/Cover.png',
       },
     ];
   }
@@ -55,7 +55,6 @@ export class WorksComponent {
   }
 
   projectDetails(id: number) {
-    this._router.navigate([`/${id}`]);
-    console.log(id);
+    this._router.navigate(['/project', id]);
   }
 }
