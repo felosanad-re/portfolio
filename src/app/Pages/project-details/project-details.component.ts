@@ -47,7 +47,7 @@ export class ProjectDetailsComponent {
         'Specification Pattern',
         'Builder Pattern',
       ],
-      demoUrl: '#',
+      demoUrl: 'http://shoppingfast.runasp.net/home',
       githubUrl: 'https://github.com/felosanad-re/Ecommerce-FullStack',
     },
     {
