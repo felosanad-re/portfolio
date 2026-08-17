@@ -83,6 +83,71 @@ export class ProjectDetailsComponent {
       demoUrl: 'http://composystem.runasp.net/',
       githubUrl: 'https://github.com/felosanad-re/Soulution.AdminPanel.Apis',
     },
+    {
+      id: 3,
+      name: 'Online Learning Platform',
+      description:
+        'A full-stack online learning platform with course management, online and recorded learning, payments, progress tracking, and role-based dashboards for students, instructors, and administrators.',
+
+      cover: './assets/Images/OnlinePlatform/Hero.png',
+
+      images: [
+        './assets/Images/OnlinePlatform/one.png',
+        './assets/Images/OnlinePlatform/Second.png',
+        './assets/Images/OnlinePlatform/Third.png',
+        './assets/Images/OnlinePlatform/four.png',
+        './assets/Images/OnlinePlatform/five.png',
+        './assets/Images/OnlinePlatform/six.png',
+      ],
+
+      technologies: [
+        'Angular 17',
+        '.NET 9',
+        'SQL Server',
+        'Redis',
+        'Stripe',
+        'Zoom API',
+      ],
+
+      features: [
+        'Role-based authentication and authorization',
+        'Course creation and management',
+        'Online and recorded courses',
+        'Student enrollment and lecture progress tracking',
+        'Course ratings and reviews',
+        'Stripe payment integration',
+        'Live classes with Zoom integration',
+        'Redis-based caching and session management',
+        'Admin and instructor analytics dashboards',
+        'User, course, and enrollment management',
+      ],
+
+      keyAchievements: [
+        'Designed the backend using Clean Architecture with clear separation of concerns',
+        'Implemented Generic Repository, Unit of Work, and Specification patterns for reusable data access',
+        'Built a modular Angular frontend using reusable components, services, and PrimeNG',
+        'Implemented ASP.NET Core Identity with role-based authentication and authorization',
+        'Integrated Stripe for secure course payments and webhook-based payment confirmation',
+        'Integrated Zoom API and webhooks to support live online classes',
+        'Implemented Redis for efficient caching and temporary data management',
+        'Built student progress tracking and course rating systems',
+        'Developed dashboards with enrollment, revenue, student, instructor, and course analytics',
+      ],
+
+      architecture: [
+        'Clean Architecture',
+        'Onion Architecture',
+        'Generic Repository Pattern',
+        'Unit of Work Pattern',
+        'Specification Pattern',
+        'ASP.NET Core Identity',
+        'Entity Framework Core',
+        'Redis Caching',
+      ],
+
+      demoUrl: 'https://courses-gamma-two.vercel.app/',
+      githubUrl: 'https://github.com/felosanad-re/Courses',
+    },
   ];
 
   constructor(private readonly _activatedRouter: ActivatedRoute) {}

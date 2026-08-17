@@ -30,6 +30,13 @@ export class WorksComponent {
           'Multi-role Admin Panel with full control over inventory, orders, and reporting system with secure authentication.',
         image: './assets/Images/Admin Panel/Cover.png',
       },
+      {
+        id: 3,
+        name: 'Online Learning Platform',
+        description:
+          'Full-stack online learning platform with course management, payments, live classes, and role-based dashboards.',
+        image: './assets/Images/OnlinePlatform/Hero.png',
+      },
     ];
   }
 
